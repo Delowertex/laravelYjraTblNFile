@@ -1,0 +1,17 @@
+yajra----
+composer require yajra/laravel-datatables
+\Yajra\DataTables\DataTablesServiceProvider::class,
+'DataTables' => \Yajra\DataTables\Facades\DataTables::class,
+php artisan vendor:publish --provider="Yajra\DataTables\DataTablesServiceProvider"
+php artisan make:controller EmployeeController
+php artisan make:model Employee -m
+php artisan migrate
+php artisan make:factory EmployeeFactory -model=Employee
+php artisan tinker
+Employee::factory()->count(100)->create() 
+php artisan datatables:make Employee
+
+yajra-excel/cvc buttos-----
+composer require yajra/laravel-datatables-buttons
+\Yajra\DataTables\ButtonsServiceProvider::class,
+php artisan vendor:publish --tag=datatables-buttons
